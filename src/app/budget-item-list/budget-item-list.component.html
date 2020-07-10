@@ -1,0 +1,37 @@
+<section class="budjet-items-section">
+    <div class="budget-items-contianer">
+        <div class="income-column">
+            <h1>Income</h1>
+            <div class="buget-items">
+                
+            
+            
+           <div *ngFor="let item of bodgetItem">
+            <app-budget-item-card style="display:block ;margin-bottom:20px"  
+              *ngIf = "item.amount >=0" 
+              (cardclick)="onCardclick(item)"
+              [item]="item"
+              (xclick)="delet(item)"></app-budget-item-card>
+            </div>
+        </div>
+    </div>
+        <div class="expemses-column">
+            <h1>expemses</h1>
+            <div class="buget-items">
+                
+            
+            
+                <div *ngFor="let item of bodgetItem">
+                 <app-budget-item-card style="display:block ; margin-bottom:20px;"  
+                   *ngIf = "item.amount < 0"
+                    [item]="item"
+                    (xclick)="delet(item)"
+                    (cardclick)="onCardclick(item)"></app-budget-item-card>
+                 </div>
+             </div>
+        </div>
+    </div>
+  
+</section>
+
+<!---->

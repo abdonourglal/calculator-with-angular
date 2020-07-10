@@ -1,0 +1,18 @@
+
+<div class="top-par">
+    <h1>budget Calculater</h1>
+</div>
+<section class="total-pudgect-section">
+    <h2 [ngClass]="{'red':TotalBud < 0,'green':TotalBud >0}">
+        {{TotalBud}}
+    </h2>
+</section>
+<section class="add-item-section">
+    <div class="add-item-contianer">
+       <app-add-item-form style="padding: 20px;" (formSubmit)="addItem($event)"></app-add-item-form>
+    </div>
+</section>
+<hr style="margin-top:0 ;"> 
+<app-budget-item-list [bodgetItem]="bodgetItem" (Delet)="deletItem($event)" (Updat)="UpdatItem($event)">
+    
+</app-budget-item-list>
